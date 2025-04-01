@@ -6,8 +6,8 @@ def index(request):
     context = {
         'user': request.user.get_full_name,
         'title': 'Home Page',
+        'is_superuser': request.user.is_superuser,
     }
-    print(request.user.get_full_name, request.method)  # This will print the logged-in user's username if authenticated'
     return render(request, 'index.html', context)
 
 

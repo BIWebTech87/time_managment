@@ -37,6 +37,15 @@ class Employee(AbstractUser):
         verbose_name = "Employee"
         verbose_name_plural = "Employees"
 
+    class Roles(models.TextChoices):
+        SELECT = "Select", "Select"
+        BACK_DEV = "Backend Dev", "Backend Dev"
+        FRONT_DEV = "Frontend Dev", "Frontend Dev"
+        TESTER = "tester", "tester"
+        DISIGNER = "Designer", "Designer"
+
+    username = None
+
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
@@ -44,5 +53,5 @@ class Employee(AbstractUser):
     objects = EmployeeManager()
 
     email = models.EmailField(_("email address"), blank=True, unique=True)
-
+    rool = models.CharField(max_length=20, choices=Roles, default=Roles.SELECT)
 
