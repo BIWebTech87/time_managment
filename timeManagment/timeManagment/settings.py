@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     #my_apps
     'main.apps.MainConfig',
+    'employees.apps.EmployeesConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +133,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/employee/login/'
+LOGOUT_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'employees.Employee'

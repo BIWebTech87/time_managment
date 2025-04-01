@@ -5,8 +5,13 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<h1>Before to start, you should be logged</h1>
-<a href="{% url 'login' %}">LogIn</a>
-<a href="{% url 'registration' %}">SignUp</a>
+<form method="post" action="{% url 'employees:logout' %}">
+    {% csrf_token %}
+    <h3>User Interface:</h3>
+    <p>User: {{ user }}</p>
+    <button type="submit">Logout</button>
+</form>
+
+
 </body>
 </html>
