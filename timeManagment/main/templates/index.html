@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-<form method="post" action="{% url 'employees:logout' %}">
-    {% csrf_token %}
-    <h3>User Interface:</h3>
-    <p>User: {{ user }}</p>
-    <button type="submit">Logout</button>
-</form>
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
 
 
-</body>
-</html>
+{% block content %}
+
+{% endblock %}
+
