@@ -27,7 +27,7 @@
               Employees
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
+              <li><a class="dropdown-item" href="{% url 'employees:employees_list' %}">All</a></li>
               <li><a class="dropdown-item" href="#">Add</a></li>
               <li><a class="dropdown-item" href="#">Delete</a></li>
             </ul>
@@ -60,7 +60,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            User: {{ user }}
+            User: {{ user|title }}
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
