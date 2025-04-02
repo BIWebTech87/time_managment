@@ -53,5 +53,9 @@ class Employee(AbstractUser):
     objects = EmployeeManager()
 
     email = models.EmailField(_("email address"), blank=True, unique=True)
-    rool = models.CharField(max_length=20, choices=Roles, default=Roles.SELECT)
+    role = models.CharField(max_length=20, choices=Roles, default=Roles.SELECT)
+
+    def __str__(self):
+        return self.get_full_name()
+
 

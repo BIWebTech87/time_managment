@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <a class="navbar-brand" href="#">TimeManagment</a>
+    <a class="navbar-brand" href="{% url 'main:index' %}">TimeManagment</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,13 +27,12 @@
               Employees
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
-              <li><a class="dropdown-item" href="#">Add</a></li>
-              <li><a class="dropdown-item" href="#">Delete</a></li>
+              <li><a class="dropdown-item" href="{% url 'employees:employees_list' %}">All</a></li>
+              <li><a class="dropdown-item" href="{% url 'employees:add_new_employee' %}">Add</a></li>
             </ul>
           </li>
         </ul>
-         <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Projects
@@ -60,7 +59,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            User: {{ user }}
+            User: {{ user|title }}
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -78,9 +77,15 @@
     </div>
   </div>
 </nav>
-{% block content %}
 
-{% endblock %}
+<div class="container">
+  {% block content %}
+
+  {% endblock %}
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ5uwp6HIvRzfrUpHjnN6Z9Ff5sqS+IzxcLvU=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
