@@ -6,25 +6,36 @@
 
 
 {% block content %}
-{% if error_employee_does_not_exist %}
+{% if form %}
+    <h1>{{ form_title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="action" value="update">
+        <input type="submit" value="{{ form_button }}">
+    </form>
+{% endif %}
 
-<h1> {{ error_employee_does_not_exist }} </h1>
+{% if form_fire %}
+    <h3>{{ form_fire_title }}</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form_fire.as_p }}
+        <input type="hidden" name="action" value="delete">
+        <input type="submit" value="{{ form_fire_button }}">
+    </form>
+{% endif %}
+
+
+
+
+{% if error_msg %}
+<h1> {{ error_msg }} </h1>
 <a href="{% url 'main:index' %}">Back</a>
-
-{% endif %}
-
-{% if employee %}
-<h1> {{ employee|title }} </h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-  </form>
 {% endif %}
 
 
-{% if employee_list %}
-
+{% if employees_list %}
 <h3>Total employeers: {{ total_employees }}</h3>
 <table class="table">
   <thead>
@@ -52,7 +63,12 @@
         <label class="form-check-label" for="flexCheckDefault"></label>
       </div>
     </td>
-    <td>{{ employee|title }}</td>
+    <td>
+      <a href="{% url 'employees:edit_employee' employee.id %}">
+        {{ employee|title }}
+      </a>
+
+    </td>
     <td>{{ employee.email }}</td>
     <td>{{ employee.role }}</td>
     <td>{{ employee.is_superuser }}</td>
@@ -60,8 +76,6 @@
   </tbody>
   {% endfor %}
 </table>
-
-
 {% endif %}
 
 {% endblock %}

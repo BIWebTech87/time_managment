@@ -15,10 +15,9 @@ class NewEmployeeForm(ModelForm):
             'last_name',
             'email',
             'role',
+            'is_superuser',
             'is_staff',
             'is_active',
-            'date_joined',
-            'is_superuser'
         ]
 
 class EmployeeDataForm(ModelForm):
@@ -31,6 +30,12 @@ class EmployeeDataForm(ModelForm):
             'role',
             'is_staff',
             'is_active',
-            'date_joined',
             'is_superuser'
+        ]
+
+class DeleteEmployeeForm(ModelForm):
+    class Meta:
+        model = Employee
+        fields = [
+            'email',
         ]
