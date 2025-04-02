@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+{% if error_employee_does_not_exist %}
+
+<h1> {{ error_employee_does_not_exist }} </h1>
+<a href="{% url 'main:index' %}">Back</a>
+
+{% endif %}
+
+{% if employee %}
+<h1> {{ employee|title }} </h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+{% endif %}
+
+
+{% if employee_list %}
+
+<h3>Total employeers: {{ total_employees }}</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault"></label>
+      </div>
+    </th>
+    <th scope="col">Full Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Role</th>
+    <th scope="col">Superuser</th>
+  </tr>
+  </thead>
+  {% for employee in employees_list %}
+  <tbody>
+  <tr>
+    <th scope="row">{{ employee.id }}</th>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault"></label>
+      </div>
+    </td>
+    <td>{{ employee|title }}</td>
+    <td>{{ employee.email }}</td>
+    <td>{{ employee.role }}</td>
+    <td>{{ employee.is_superuser }}</td>
+  </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+
+{% endif %}
+
+{% endblock %}
