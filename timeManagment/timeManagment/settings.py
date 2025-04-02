@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #my_apps
     'main.apps.MainConfig',
     'employees.apps.EmployeesConfig',
+    'projects.apps.ProjectsConfig',
 ]
 
 MIDDLEWARE = [
