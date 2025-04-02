@@ -106,10 +106,12 @@ class EmployeeCreateView(View):
         }
         form = NewEmployeeForm(request.POST)
         if form.is_valid():
-            form.save()
+            new_employee=form.save(commit=False)
+            new_employee.set_password(form.cleaned_data['password'])
+            new_employee.save()
             return redirect('employees:employees_list')
         else:
-            context['form'] = NewEmployeeForm()
+            context['form'] = form
             context['form_title'] = "Create new employee"
             context['form_button'] = "Create"
             context['error_msg'] = "Form is not valid"
