@@ -7,15 +7,14 @@
 {% block content %}
 
 {% if form %}
-    <h1>{{ form_title }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="hidden" name="action" value="update">
-        <input type="submit" value="{{ form_button }}">
-    </form>
+<h1>{{ form_title }}</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="hidden" name="action" value="update">
+  <input type="submit" value="{{ form_button }}">
+</form>
 {% endif %}
-
 
 
 {% if project_list %}
@@ -24,12 +23,7 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <!--<th scope="col">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault"></label>
-      </div>
-    </th>-->
+    <th scope="col">Active</th>
     <th scope="col">Name</th>
     <th scope="col">Client</th>
     <th scope="col">Status</th>
@@ -43,18 +37,18 @@
   <tbody>
   <tr>
     <th scope="row">{{ project.id }}</th>
-<!--    <td>-->
-<!--      <div class="form-check">-->
-<!--        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
-<!--        <label class="form-check-label" for="flexCheckDefault"></label>-->
-<!--      </div>-->
-<!--    </td>-->
     <td>
-{# <a href="{% url 'projects:edit_project' employee.id %}"> #}
-      <a href="#">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="flexCheckDefault" {% if project.is_active %} style="background-color: green;"  checked {% endif %}
+               disabled>
+      </div>
+
+
+    </td>
+    <td>
+      <a href="{% url 'projects:edit_project' project.id %}">
         {{ project|title }}
       </a>
-
     </td>
     <td>{{ project.client }}</td>
     <td>{{ project.status }}</td>

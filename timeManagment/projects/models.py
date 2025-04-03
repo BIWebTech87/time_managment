@@ -19,6 +19,7 @@ class Project(models.Model):
         ('medium', 'Medium'),
         ('high', 'High'),
     ])
+    is_active = models.BooleanField(default=True)
     manager = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, related_name='managed_projects')
     team_members = models.ManyToManyField(Employee, related_name='projects')
     created_at = models.DateTimeField(auto_now_add=True)
