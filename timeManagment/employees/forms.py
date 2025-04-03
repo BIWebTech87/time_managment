@@ -28,7 +28,6 @@ class EmployeeDataForm(ModelForm):
             'first_name',
             'last_name',
             'email',
-            'password',
             'role',
             'is_staff',
             'is_active',
