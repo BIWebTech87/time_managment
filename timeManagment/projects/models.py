@@ -3,17 +3,18 @@ from employees.models import Employee
 
 # Create your models here.
 class Project(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField()
     description = models.TextField()
-    client = models.CharField(max_length=100)
+    client = models.CharField()
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
-    status = models.CharField(max_length=50, choices=[
+    status = models.CharField(choices=[
+        ('in_preparation', 'In Preparation'),
         ('in_progress', 'In Progress'),
         ('completed', 'Completed'),
         ('on_hold', 'On Hold'),
     ])
-    priority = models.CharField(max_length=10, choices=[
+    priority = models.CharField(choices=[
         ('low', 'Low'),
         ('medium', 'Medium'),
         ('high', 'High'),
@@ -22,6 +23,10 @@ class Project(models.Model):
     team_members = models.ManyToManyField(Employee, related_name='projects')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return self.name
 
 
 class Task(models.Model):
