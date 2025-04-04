@@ -8,4 +8,6 @@ class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
+    print(queryset)
+
 
