@@ -38,10 +38,19 @@
               Projects
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
-              <li><a class="dropdown-item" href="#">Add</a></li>
-              <li><a class="dropdown-item" href="#">Delete</a></li>
-              <li><a class="dropdown-item" href="#">StandBy</a></li>
+              <li><a class="dropdown-item" href="{% url 'projects:projects_list' %}">All</a></li>
+              <li><a class="dropdown-item" href="{% url 'projects:add_new_project' %}">Add</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tasks
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'projects:tasks_list' %}">All</a></li>
+              <li><a class="dropdown-item" href="{% url 'projects:add_new_task' %}">Add</a></li>
             </ul>
           </li>
         </ul>
