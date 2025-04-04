@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Project,Task
+from .models import Project
 from django import forms
 
 
@@ -20,46 +20,4 @@ class NewProjectForm(ModelForm):
             'priority': forms.Select(attrs={'class': 'form-control'}),
             'manager': forms.Select(attrs={'class': 'form-control'}),
             'team_members': forms.SelectMultiple(attrs={'class': 'form-control', 'size': '5'}),
-        }
-
-
-class NewTaskForm(ModelForm):
-    class Meta:
-        model = Task
-        fields = [
-            'project',
-            'title',
-            'description',
-            'assigned_to',
-            'status',
-            'priority',
-            'redline',
-        ]
-
-        widgets = {
-            'project': forms.Select(attrs={'class': 'form-control'}),
-            'title': forms.TextInput(attrs={'class': "form-control"}),
-            'description': forms.Textarea(attrs={'class': "form-control"}),
-            'assigned_to': forms.Select(attrs={'class': 'form-control'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
-            'priority': forms.Select(attrs={'class': 'form-control'}),
-            'redline': forms.DateInput(attrs={'type': 'date'}),
-        }
-
-
-
-class UpdateTaskForm(ModelForm):
-    class Meta:
-        model = Task
-        fields = '__all__'
-        widgets = {
-            'project': forms.Select(attrs={'class': 'form-control'}),
-            'title': forms.TextInput(attrs={'class': "form-control"}),
-            'description': forms.Textarea(attrs={'class': "form-control"}),
-            'assigned_to': forms.Select(attrs={'class': 'form-control'}),
-            'initial_time': forms.DateTimeInput(attrs={'type': 'datetime-local',}),
-            'final_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
-            'priority': forms.Select(attrs={'class': 'form-control'}),
-            'redline': forms.DateInput(attrs={'type': 'date'}),
         }

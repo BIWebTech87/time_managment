@@ -8,7 +8,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 app_name = 'employees'
 
 employees_routers = routers.DefaultRouter()
-employees_routers.register(r'employee', EmployeeVeiwSet, basename='employee')
+employees_routers.register(r'employees', EmployeeVeiwSet, basename='employees')
 
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='employee_login'),
