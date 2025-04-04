@@ -4,7 +4,7 @@ from django.http import Http404
 from django.views import View
 from .models import Employee
 from .forms import EmployeeDataForm, NewEmployeeForm, DeleteEmployeeForm
-from django.http import HttpResponse,JsonResponse
+
 
 # Create your views here.
 class EmployeesListView(View):

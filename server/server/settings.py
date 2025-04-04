@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #thers apps
+    'rest_framework',
+    'corsheaders',
+    'rest_framework_simplejwt',
+
     #my_apps
     'main.apps.MainConfig',
     'employees.apps.EmployeesConfig',
@@ -142,3 +147,9 @@ LOGIN_URL = '/employee/login/'
 LOGOUT_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = 'employees.Employee'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
