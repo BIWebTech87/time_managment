@@ -3,11 +3,28 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from django.views import View
 from .models import Employee
-from .forms import EmployeeDataForm, NewEmployeeForm, DeleteEmployeeForm
+from .forms import EmployeeDataForm, NewEmployeeForm, DeleteEmployeeForm, EmployeeLoginForm
+from rest_framework import viewsets
+from .serializers import EmployeeSerializer
+from django.contrib.auth.views import LoginView
+
+class EmployeeVeiwSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+    http_method_names = ['get', 'post', 'put', 'patch']
 
 
-# Create your views here.
-class EmployeesListView(View):
+class EmployeeLoginView(LoginView):
+    template_name = 'login.html'
+    form_class = EmployeeLoginForm
+
+    def get_form_kwargs(self):
+        keyword = super().get_form_kwargs()
+        keyword.pop('request', None)
+        return keyword
+
+
+'''class EmployeesListView(View):
     model = Employee
     template_name = 'employees_template.html'
 
@@ -20,7 +37,7 @@ class EmployeesListView(View):
         }
 
         return render(request, self.template_name , context)
-
+'''
 
 class EmployeeUpdateView(View):
     template_name = 'employees_template.html'
