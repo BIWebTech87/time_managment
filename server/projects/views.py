@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Project, Task
 from django.views import View
-from .forms import NewProjectForm, NewTaskForm
+from .forms import NewProjectForm, NewTaskForm,UpdateTaskForm
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.http import Http404
@@ -131,7 +131,7 @@ class TaskCreateView(View):
             return redirect('projects:tasks_list')
         else:
             context['form'] = form
-            context['form_title'] = "Create new project"
+            context['form_title'] = "Create new task"
             context['form_button'] = "Create"
             context['error_msg'] = "Form is not valid"
         return render(request, self.template_name, context)
@@ -149,7 +149,7 @@ class TaskUpdateView(View):
 
         try:
             task = self.get_task(kwargs.get('pk'))
-            form = NewTaskForm(instance=task)
+            form = UpdateTaskForm(instance=task)
             context.update({
                 'title': task,
                 'form': form,
@@ -162,13 +162,13 @@ class TaskUpdateView(View):
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
-        project = self.get_task(kwargs.get('pk'))
+        task = self.get_task(kwargs.get('pk'))
 
-        form = NewTaskForm(request.POST, instance=Task)
+        form = UpdateTaskForm(request.POST, instance=task)
 
         if form.is_valid():
             form.save()
-            return redirect('projects:task_list')
+            return redirect('projects:tasks_list')
 
         context = {
             'title': Task,

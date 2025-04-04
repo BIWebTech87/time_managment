@@ -35,7 +35,6 @@ class NewTaskForm(ModelForm):
             'priority',
             'redline',
         ]
-
         widgets = {
             'project': forms.Select(attrs={'class': 'form-control'}),
             'title': forms.TextInput(attrs={'class': "form-control"}),
