@@ -11,10 +11,20 @@ class EmployeeManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError("The Email field must be set")
+        groups = extra_fields.pop('groups', None)
+        user_permissions = extra_fields.pop('user_permissions', None)
+
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
+
+        if groups:
+            user.groups.set(groups)  # Use `.set()` for many-to-many fields
+
+        if user_permissions:
+            user.user_permissions.set(user_permissions)
+
         return user
 
     def create_superuser(self, email, password=None, **extra_fields):

@@ -7,11 +7,16 @@ from .forms import EmployeeDataForm, NewEmployeeForm, DeleteEmployeeForm, Employ
 from rest_framework import viewsets
 from .serializers import EmployeeSerializer
 from django.contrib.auth.views import LoginView
+from rest_framework.permissions import IsAuthenticated
+from .perrmitions import IsAuthenticatedAndSuperuser
+
 
 class EmployeeVeiwSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    http_method_names = ['get', 'post', 'put', 'patch']
+    http_method_names = ['get','post', 'put', 'patch']
+    permission_classes = [IsAuthenticatedAndSuperuser]
+
 
 
 class EmployeeLoginView(LoginView):
