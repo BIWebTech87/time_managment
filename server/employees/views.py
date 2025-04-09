@@ -18,7 +18,6 @@ class EmployeeVeiwSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedAndSuperuser]
 
 
-
 class EmployeeLoginView(LoginView):
     template_name = 'login.html'
     form_class = EmployeeLoginForm

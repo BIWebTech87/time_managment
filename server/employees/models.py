@@ -44,15 +44,15 @@ class EmployeeManager(BaseUserManager):
 
 class Employee(AbstractUser):
     class Meta:
-        verbose_name = "Employee"
-        verbose_name_plural = "Employees"
+        verbose_name = _("Employee")
+        verbose_name_plural = _("Employees")
 
     class Roles(models.TextChoices):
-        SELECT = "Select", "Select"
-        BACK_DEV = "Backend Dev", "Backend Dev"
-        FRONT_DEV = "Frontend Dev", "Frontend Dev"
-        TESTER = "tester", "tester"
-        DISIGNER = "Designer", "Designer"
+        SELECT = "Select", _("Select")
+        BACK_DEV =  "Backend Dev", _("Backend Dev")
+        FRONT_DEV =  "Frontend Dev", _("Frontend Dev")
+        TESTER =  "tester", _("Tester")
+        DISIGNER =  "Designer", _("Designer")
 
     username = None
 
@@ -63,7 +63,7 @@ class Employee(AbstractUser):
     objects = EmployeeManager()
 
     email = models.EmailField(_("email address"), blank=True, unique=True)
-    role = models.CharField(max_length=20, choices=Roles, default=Roles.SELECT)
+    role = models.CharField(_('Role'), max_length=20, choices=Roles, default=Roles.SELECT)
 
     def __str__(self):
         return self.get_full_name()

@@ -1,6 +1,7 @@
 from django.db import models
 from employees.models import Employee
 from tasks.models import Task
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
