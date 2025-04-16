@@ -1,11 +1,11 @@
-// src/App.tsx
+// src/routes.tsx
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Login from './components/auth/Login';
 import Dashboard from './components/Dashboard';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
-function App() {
+function AppRoutes() {
   return (
     <AuthProvider>
       <Router>
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppRoutes;

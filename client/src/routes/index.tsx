@@ -1,9 +1,14 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from '../App';
-const router = createBrowserRouter([ {
-path: '/',
-element: <App />, }
-]);
-export default function Routes() {
-return <RouterProvider router={router} />;
+// src/routes.tsx (likely structure)
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+function AppRoutes() {
+  return (
+    <Router>
+      <Routes>
+        {/* Your existing routes */}
+      </Routes>
+    </Router>
+  );
 }
+
+export default AppRoutes;
