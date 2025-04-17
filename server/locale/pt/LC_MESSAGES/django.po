@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-08 18:23+0000\n"
+"POT-Creation-Date: 2025-04-09 09:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,82 +18,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: employees/models.py:47
+#: .\employees\models.py:47
 #, fuzzy
 #| msgid "Employees"
 msgid "Employee"
 msgstr "Funcionarios"
 
-#: employees/models.py:48 main/templates/base.html:29 main/views.py:8
+#: .\employees\models.py:48 .\main\templates\base.html:29 .\main\views.py:8
 msgid "Employees"
 msgstr "Funcionarios"
 
-#: employees/models.py:51
+#: .\employees\models.py:51
 msgid "Select"
 msgstr "Selecionar"
 
-#: employees/models.py:52
+#: .\employees\models.py:52
 msgid "Backend Dev"
 msgstr "Desenvolvedor backend"
 
-#: employees/models.py:53
+#: .\employees\models.py:53
 msgid "Frontend Dev"
 msgstr "Desenvolvedor Frontend"
 
-#: employees/models.py:54
+#: .\employees\models.py:54
 msgid "Tester"
 msgstr "QA"
 
-#: employees/models.py:55
+#: .\employees\models.py:55
 msgid "Designer"
 msgstr "Desainer"
 
-#: employees/models.py:65
+#: .\employees\models.py:65
 msgid "email address"
 msgstr "Endreço de email"
 
-#: employees/models.py:66
+#: .\employees\models.py:66
 msgid "Role"
 msgstr "Posição"
 
-#: main/templates/base.html:16
+#: .\main\templates\base.html:16
 msgid "Time Managment"
 msgstr "Controlo de tempo"
 
-#: main/templates/base.html:33 main/templates/base.html:46
-#: main/templates/base.html:58 main/views.py:8 main/views.py:9 main/views.py:10
+#: .\main\templates\base.html:33 .\main\templates\base.html:46
+#: .\main\templates\base.html:58 .\main\views.py:8 .\main\views.py:9
+#: .\main\views.py:10
 msgid "All"
 msgstr "Todos"
 
-#: main/templates/base.html:34 main/templates/base.html:47
-#: main/templates/base.html:59
+#: .\main\templates\base.html:34 .\main\templates\base.html:47
+#: .\main\templates\base.html:59
 msgid "Add"
 msgstr "Adicionar"
 
-#: main/templates/base.html:42 main/views.py:9
+#: .\main\templates\base.html:42 .\main\views.py:9
 msgid "Projects"
 msgstr "Os Projectos"
 
-#: main/templates/base.html:55 main/views.py:10
+#: .\main\templates\base.html:55 .\main\views.py:10
 msgid "Tasks"
-msgstr "As Tascas"
+msgstr "As Tarefas"
 
-#: main/views.py:7
+#: .\main\views.py:7
 msgid "Home"
 msgstr "Inicio"
 
-#: main/views.py:8 main/views.py:9 main/views.py:10
+#: .\main\views.py:8 .\main\views.py:9 .\main\views.py:10
 msgid "New"
 msgstr "Novo"
 
-#: server/settings.py:208
+#: .\server\settings.py:208
 msgid "English"
 msgstr "Inglẽs"
 
-#: server/settings.py:209
+#: .\server\settings.py:209
 msgid "Portuguese"
 msgstr "Portuguẽs"
 
-#: server/settings.py:210
+#: .\server\settings.py:210
 msgid "Russian"
 msgstr "Russo"

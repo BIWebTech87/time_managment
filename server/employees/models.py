@@ -4,9 +4,6 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import BaseUserManager
 
 class EmployeeManager(BaseUserManager):
-    """
-    Кастомный менеджер для модели Employee, где email используется вместо username.
-    """
 
     def create_user(self, email, password=None, **extra_fields):
         if not email:
@@ -28,9 +25,6 @@ class EmployeeManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password=None, **extra_fields):
-        """
-        Создание суперпользователя.
-        """
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 

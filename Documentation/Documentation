@@ -1,0 +1,34 @@
+Backend.
+For backend has been used DRF(DjangoRestFramework) with Python 3.12.8
+
+## 🌐 Languages Supported by Backend
+
+Supported languages:
+
+- `pt` — Portuguese
+- `en` — English
+- `ru` — Russian
+
+To test translations, you can simply add `{{lng}}/` after the `BASE_URL`.
+Example: http://127.0.0.1:8000/{{lng}}/
+
+Here, `lng` is a dynamic variable responsible for switching the language.
+
+For static language switching, just use the language code directly in the URL.
+Example:
+
+http://127.0.0.1:8000/pt/
+
+
+##   Registration:
+    - SIGN UP - DRF require POST request with json format to url adress:
+    http://127.0.0.1:8000/{{lng}}/api/v1/employees/
+    with next information
+        -   {
+                "email": "test@email.com",
+                "first_name": "exempleFN",
+                "last_name": "exempleLN",
+                "password": "exemple"
+            }
+    email_field is unique it is reason why 2 employees with the same email could not be existed
+
