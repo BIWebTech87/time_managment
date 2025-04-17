@@ -1,6 +1,9 @@
 Backend.
 For backend has been used DRF(DjangoRestFramework) with Python 3.12.8
 
+Atention all URL's is used like http://127.0.0.1:8000/
+
+
 ## 🌐 Languages Supported by Backend
 
 Supported languages:
@@ -20,15 +23,55 @@ Example:
 http://127.0.0.1:8000/pt/
 
 
-##   Registration:
-    - SIGN UP - DRF require POST request with json format to url adress:
+Registration:
+
+    New Employee could be created by SUPERUSER, and JUST BY SUPERUSER
+
+    SIGN UP — DRF requires a POST request in JSON format to the following URL:
     http://127.0.0.1:8000/{{lng}}/api/v1/employees/
-    with next information
-        -   {
-                "email": "test@email.com",
-                "first_name": "exempleFN",
-                "last_name": "exempleLN",
-                "password": "exemple"
-            }
-    email_field is unique it is reason why 2 employees with the same email could not be existed
+
+    With the following data:
+
+    {
+        "email": "test@email.com",
+        "first_name": "exampleFN",
+        "last_name": "exampleLN",
+        "password": "example"
+    }
+
+    The email field must be unique, which means two employees cannot share the same email address.
+
+    Editing Personal Data:
+
+    To edit personal data, send a PATCH request to the following URL:
+    http://127.0.0.1:8000/{{lng}}/api/v1/employees/{{employee.id}}
+
+    With the body:
+
+    {
+        "email": "edited_test@email.com",
+        "first_name": "editedExampleFN",
+        "last_name": "editedExampleLN",
+        "password": "editedExample"
+    }
+
+
+Login:
+
+    Login is performed via JWT token using a POST request to the following URL:
+    http://127.0.0.1:8000/{{lng}}/api/v1/employees/token/
+
+    With the following body:
+
+    {
+        "email": "test@email.com",
+        "password": "example"
+    }
+
+    If the email and password match, the API will return two tokens: access and refresh.
+    Logout:
+
+    To log out, send a POST request to the following URL:
+    http://127.0.0.1:8000/{{lng}}/api/v1/employees/logout/
+
 
