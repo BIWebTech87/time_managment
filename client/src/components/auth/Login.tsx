@@ -1,7 +1,9 @@
-// src/components/auth/Login.tsx - Updated
+// src/components/auth/Login.tsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import '../../styles/Login.css';
+import { FiMail, FiLock, FiLogIn } from 'react-icons/fi';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,42 +33,58 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-center">Time Management System</h2>
-        <h3 className="text-xl font-medium text-center">Login</h3>
-        
-        {error && <div className="p-3 text-sm text-red-500 bg-red-100 rounded">{error}</div>}
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              required
-            />
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-header">
+          <div className="app-logo">
+            <h1>WebTech87 <br></br>Time Managment</h1>
+          </div>
+          <h2>Sign up in seconds and start organizing your workflow with ease</h2>
+        </div>
+
+        {error && (
+          <div className="error-message">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <div className="input-container">
+              <FiMail className="input-icon" />
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+              />
+            </div>
           </div>
           
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              required
-            />
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <div className="input-container">
+              <FiLock className="input-icon" />
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                required
+              />
+            </div>
           </div>
           
           <button
             type="submit"
+            className="login-button"
             disabled={isLoading}
-            className="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300"
           >
-            {isLoading ? 'Signing in...' : 'Sign in'}
+            {isLoading ? 'Signing in...' : 'Sign in'} {!isLoading && <FiLogIn className="button-icon" />}
           </button>
         </form>
       </div>
