@@ -74,4 +74,6 @@ Login:
     To log out, send a POST request to the following URL:
     http://127.0.0.1:8000/{{lng}}/api/v1/employees/logout/
 
+Projects:
+
 
