@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-17 11:57+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\employees\models.py:47
+msgid "Employee"
+msgstr ""
+
+#: .\employees\models.py:48 .\main\templates\base.html:29 .\main\views.py:8
+msgid "Employees"
+msgstr ""
+
+#: .\employees\models.py:51
+msgid "Select"
+msgstr ""
+
+#: .\employees\models.py:52
+msgid "Backend Dev"
+msgstr ""
+
+#: .\employees\models.py:53
+msgid "Frontend Dev"
+msgstr ""
+
+#: .\employees\models.py:54
+msgid "Tester"
+msgstr ""
+
+#: .\employees\models.py:55
+msgid "Designer"
+msgstr ""
+
+#: .\employees\models.py:65
+msgid "email address"
+msgstr ""
+
+#: .\employees\models.py:66
+msgid "Role"
+msgstr ""
+
+#: .\main\templates\base.html:16
+msgid "Time Managment"
+msgstr ""
+
+#: .\main\templates\base.html:33 .\main\templates\base.html:46
+#: .\main\templates\base.html:58 .\main\views.py:8 .\main\views.py:9
+#: .\main\views.py:10
+msgid "All"
+msgstr ""
+
+#: .\main\templates\base.html:34 .\main\templates\base.html:47
+#: .\main\templates\base.html:59
+msgid "Add"
+msgstr ""
+
+#: .\main\templates\base.html:42 .\main\views.py:9
+msgid "Projects"
+msgstr ""
+
+#: .\main\templates\base.html:55 .\main\views.py:10
+msgid "Tasks"
+msgstr ""
+
+#: .\main\views.py:7
+msgid "Home"
+msgstr ""
+
+#: .\main\views.py:8 .\main\views.py:9 .\main\views.py:10
+msgid "New"
+msgstr ""
+
+#: .\server\settings.py:208
+msgid "English"
+msgstr ""
+
+#: .\server\settings.py:209
+msgid "Portuguese"
+msgstr ""
+
+#: .\server\settings.py:210
+msgid "Russian"
+msgstr ""
