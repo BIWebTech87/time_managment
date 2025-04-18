@@ -39,7 +39,9 @@ const Login = () => {
           <div className="app-logo">
             <h1>WebTech87 <br></br>Time Managment</h1>
           </div>
-          <h2>Sign up in seconds and start organizing your workflow with ease</h2>
+          <div>
+            <h2>Sign up in seconds and start organizing your workflow with ease</h2>
+          </div>
         </div>
 
         {error && (

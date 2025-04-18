@@ -6,7 +6,8 @@ import { getProjects } from '../services/projectService';
 import { getMyTasks } from '../services/taskService';
 import '../styles/Dashboard.css';
 import { FiPlus, FiFilter, FiSearch, FiCode, FiEdit, FiEye, 
-    FiTrash2, FiInfo, FiMenu, FiX } from 'react-icons/fi';
+  FiTrash2, FiInfo, FiMenu, FiX, FiPieChart, FiCheckSquare, 
+  FiUsers, FiFolder, FiBriefcase, FiBarChart2 } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 // Define a type for the recent task display
@@ -170,18 +171,27 @@ const Dashboard = () => {
         {/* Sidebar - notice the added class for mobile open state */}
         <aside className={`dashboard-sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <nav className="sidebar-nav">
-            <div className="nav-item active">
-              <span className="nav-icon">📊</span> {t('dashboard')}
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">📝</span> {t('myTasks')}
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">👥</span> {t('team')}
-            </div>
-            <div className="nav-item">
-              <span className="nav-icon">🏢</span> {t('clients')}
-            </div>
+          <div className="nav-item active">
+  <span className="nav-icon"><FiPieChart /></span> {t('Dashboard')}
+</div>
+<div className="nav-item">
+  <span className="nav-icon"><FiCheckSquare /></span> {t('My Tasks')}
+</div>
+<div className="nav-item">
+  <span className="nav-icon"><FiUsers /></span> {t('My Team')}
+</div>
+<div className="nav-item">
+  <span className="nav-icon"><FiFolder /></span> {t('Projects')}
+</div>
+<div className="nav-item">
+  <span className="nav-icon"><FiBriefcase /></span> {t('Clients')}
+</div>
+<div className="nav-item">
+  <span className="nav-icon"><FiBarChart2 /></span> {t('Reports')}
+</div>
+
+
+
           </nav>
         </aside>
 
@@ -194,7 +204,7 @@ const Dashboard = () => {
           )}
 
           <div className="panel-header">
-            <h1 className="panel-title">{t('dashboard')}</h1>
+            <h1 className="panel-title">{t('Dashboard')}</h1>
             
             <div className="panel-actions">
               <button className="new-task-button">
