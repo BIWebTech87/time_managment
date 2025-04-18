@@ -312,9 +312,7 @@ button:focus, input:focus {
 
 /* Dark Mode Support (if required) */
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode colors can be defined here */
-  }
+  /* Dark mode colors can be defined here */
 }
 
 /* Hover Effects and Interactive Elements */
